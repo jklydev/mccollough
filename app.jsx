@@ -1,14 +1,16 @@
-
-
-ReactDOM.render(
-    <App />
-    ,document.querySelector("#app")
-);
+const React = window.React
 
 class App extends React.Component {
 
     render() {
-        <p>Hello</p>
+        return (
+            <p>Hello</p>
+        );
     }
     
 }
+
+ReactDOM.render(
+    <App />
+    ,document.getElementById("app")
+);
