@@ -5,7 +5,6 @@ class App extends React.Component {
         super();
         this.state = {
             page: this.start(),
-            image: InductionRed()
         }
     }
 
