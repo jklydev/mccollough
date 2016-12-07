@@ -10,7 +10,7 @@ class App extends React.Component {
 
     start() {
         return (
-            <Introduction next={() => this.setState({ page: this.showImages }) } />
+            <Introduction next={() => this.setState({ page: this.showImages() }) } />
         );
     }
     
@@ -35,7 +35,7 @@ class App extends React.Component {
 }
 
 function Introduction(props) {
-    return(
+    return (
         <div id="introduction">
             <h1>McCollough</h1>
             <p>Explination of the McCollough Effect</p>
