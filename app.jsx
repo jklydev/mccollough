@@ -24,7 +24,7 @@ class App extends React.Component {
 
     testImage() {
         return (
-            <p>hi</p>
+           <Test />
         );
     }
 
@@ -59,6 +59,14 @@ function Induction(props) {
             <button className="toTest" onClick={() => props.next() }>
                 Test
             </button>
+        </div>
+    );
+}
+
+function Test() {
+    return (
+        <div id="test">
+            <img src="test.png"></img>
         </div>
     );
 }
