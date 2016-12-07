@@ -18,18 +18,9 @@ class App extends React.Component {
     showImages() {
         return (
             <div>
-                <Induction image={ this.state.image } next={ () => this.setState({ page: this.testImage() }) } />
-                <script>setInterval(this.change(), 2000)</script>
+                <Induction next={ () => this.setState({ page: this.testImage() }) } />
             </div>
         );
-    }
-
-    change() {
-        if (this.state.image === InductionRed()) {
-            this.setState({ image: InductionGreen() })
-        } else {
-            this.setState({ image: InductionRed() })
-        }
     }
 
     testImage() {
@@ -63,26 +54,12 @@ function Introduction(props) {
 function Induction(props) {
     return(
         <div id="induction">
-            { props.image }
+            <div id="gif">
+                <img src="induction.gif"></img>
+            </div>
             <button className="toTest" onClick={() => props.next() }>
                 Test
             </button>
-        </div>
-    );
-}
-
-function InductionRed() {
-    return (
-        <div id="induction">
-            <img src="induction1.png"></img>
-        </div>
-    );
-}
-
-function InductionGreen() {
-    return (
-        <div id="induction">
-            <img src="induction2.png"></img>
         </div>
     );
 }
