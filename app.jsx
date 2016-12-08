@@ -89,11 +89,15 @@ class Timer extends React.Component {
         return time
     }
 
+    componentDidMount() {
+        setTimeout(this.setState({ now: this.getTime() }), 2000)
+        setTimeout(console.log(this.formatTime()), 2000)
+    }
+
     render() {
         return(
             <div id="countdown">
                 { this.formatTime() }
-                { setInterval(this.setState({ now: this.getTime() }), 1000) }
             </div>
         )
     }
