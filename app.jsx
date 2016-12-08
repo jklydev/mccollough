@@ -53,14 +53,50 @@ function Introduction(props) {
 function Induction(props) {
     return(
         <div id="induction">
+            <div id="button">
+                <Timer />
+                <button className="toTest" onClick={() => props.next() }>
+                    Test
+                </button>
+            </div> 
             <div id="gif">
                 <img src="induction.gif"></img>
             </div>
-            <button className="toTest" onClick={() => props.next() }>
-                Test
-            </button>
         </div>
     );
+}
+
+class Timer extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            now: this.getTime(),
+            end: this.getTime() + 180
+        }
+    }
+
+    getTime() {
+        return (Date.now()/1000)
+    }
+
+    formatTime() {
+        let remaining = this.state.end - this.state.now
+        let rawMinutes = (remaining / 60) | 0
+        let rawSeconds = (remaining % 60) | 0
+        let minutes = rawMinutes < 10 ? "0" + rawMinutes : rawMinutes
+        let seconds = rawSeconds < 10 ? "0" + rawSeconds : rawSeconds
+        let time = minutes + ":" + seconds
+        return time
+    }
+
+    render() {
+        return(
+            <div id="countdown">
+                { this.formatTime() }
+                { setInterval(this.setState({ now: this.getTime() }), 1000) }
+            </div>
+        )
+    }
 }
 
 function Test() {
@@ -70,6 +106,8 @@ function Test() {
         </div>
     );
 }
+
+
 
 ReactDOM.render(
     <App />
