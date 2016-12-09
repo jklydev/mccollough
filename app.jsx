@@ -90,8 +90,9 @@ class Timer extends React.Component {
     }
 
     componentDidMount() {
+        console.log(this.formatTime())
         setTimeout(this.setState({ now: this.getTime() }), 1000)
-        setTimeout(this.forceUpdate(), 2000)
+        setTimeout(console.log(this.formatTime()), 1000)
     }
 
     render() {
