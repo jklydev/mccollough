@@ -80,7 +80,7 @@ class Timer extends React.Component {
     }
 
     formatTime() {
-        let remaining = this.state.end - this.state.now
+        let remaining = Math.abs(this.state.end - this.state.now)
         let rawMinutes = (remaining / 60) | 0
         let rawSeconds = (remaining % 60) | 0
         let minutes = rawMinutes < 10 ? "0" + rawMinutes : rawMinutes
