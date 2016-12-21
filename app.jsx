@@ -61,8 +61,8 @@ function Induction(props) {
                     Test
                 </button>
             </div> 
-            <div id="gif">
-                <img src="induction.gif"></img>
+            <div id="induction-gif">
+                <img id="gif" src="induction.gif"></img>
             </div>
         </div>
     );
