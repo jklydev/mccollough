@@ -14,5 +14,5 @@ Todo
 ----
 - [ ] Styling
 - [ ] React Router
-- [ ] Resize images to fit screens
+- [x] Resize images to fit screens
 - [ ] Podcast
