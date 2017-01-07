@@ -45,9 +45,9 @@ function Introduction(props) {
                 <p>The most notable part of the effect is how long lasting it can be, while an induction period of two to four minutes will result in the effect persisting up to an hour, an induction period of 15 minutes can result in the effect persisting for over three months <a href="http://psycnet.apa.org/journals/xhp/1/4/323/">(Jones, Holding. 1975)</a>.</p>
                 <p>If you're interested in inducing the McCollough effect in yourself just click start below and look directly at the centre of the images for at least two minutes. Since you're going to be here a while you might want to listen to something, might I recommend the Radiolab episode on <a href="http://www.radiolab.org/story/211119-colors/">color?</a></p>
             </div>
-            <button className="toImages" onClick={() => props.next()}>
-                Start
-            </button>
+            <ReactRouter.Link to="/induction">
+                Test
+            </ReactRouter.Link>
         </div>
     );
 }
@@ -57,9 +57,9 @@ function Induction(props) {
         <div id="induction">
             <div id="button">
                 <Timer />
-                <button className="toTest" onClick={() => props.next() }>
+                <ReactRouter.Link to="/test">
                     Test
-                </button>
+                </ReactRouter.Link>
             </div> 
             <div id="induction-gif">
                 <img id="gif" src="induction.gif"></img>
@@ -114,7 +114,16 @@ function Test() {
 
 
 
+//ReactDOM.render(
+//    <App />
+//    ,document.getElementById("app")
+//);
+
 ReactDOM.render(
-    <App />
-    ,document.getElementById("app")
-);
+    <ReactRouter.Router>
+        <ReactRouter.Route path="/" component={Introduction} />
+            <ReactRouter.Route path="induction" component={Induction} />
+            <ReactRouter.Route path="test" component={Test} />
+    </ReactRouter.Router>
+    ,document.getElementById("app")   
+)
